@@ -19,7 +19,7 @@ public class Game
 		static String arrayGame[][] = new String [20][20];
 		public static void main(String[] args)
 			{
-				//doIntro();
+				doIntro();
 				fillWithStars();
 				while (gameContinue)
 				{
