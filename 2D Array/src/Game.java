@@ -19,7 +19,7 @@ public class Game
 		static String arrayGame[][] = new String [20][20];
 		public static void main(String[] args)
 			{
-				doIntro();
+				//doIntro();
 				fillWithStars();
 				while (gameContinue)
 				{
@@ -130,11 +130,12 @@ public class Game
 									fight = false;
 									break;
 								}
-							else if (health==0)
+							if (health==0)
 								{
+									dieFight();
 									fight = false;
 									gameContinue=false;
-									dieFight();
+									
 								}
 							else
 								{
@@ -143,9 +144,19 @@ public class Game
 								}
 							else 
 								{
+									if (health==0)
+										{
+											dieFight();
+											fight = false;
+											gameContinue=false;
+											
+										}
+									else
+										{
 									JOptionPane.showMessageDialog(frame, "You Missed");
 									health-=10;
 									break;
+										}
 								}
 							}
 						case 1:
@@ -363,7 +374,7 @@ public class Game
                     "Stranded in a Field",
                     JOptionPane.PLAIN_MESSAGE,
                     icon,
-                    null,
+                    null,  
                     null); 
 			ImageIcon icon2 =  new ImageIcon("mm.jpg");
 			JOptionPane.showMessageDialog(
