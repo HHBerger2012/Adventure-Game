@@ -19,7 +19,7 @@ public class Game
 		static String arrayGame[][] = new String [20][20];
 		public static void main(String[] args)
 			{
-				doIntro();
+				//doIntro();
 				fillWithStars();
 				while (gameContinue)
 				{
@@ -295,7 +295,7 @@ public class Game
 		{
 			int choice;
 			Object[] options = {"Go Inside", "Leave"};
-			ImageIcon icon =  new ImageIcon("bg.gif");
+			ImageIcon icon =  new ImageIcon("ll.gif");
 			choice = JOptionPane.showOptionDialog(null, 
 				"A Seemingly Abandoned Mine",
 				"Choose Your Action",
@@ -309,30 +309,76 @@ public class Game
 					case 0:
 							{
 								gameContinue=true;
+								
+								break;
 							}
 					case 1:
 							{
 								JOptionPane.showMessageDialog(frame, "You Got Away Safely");
+								break;
 							}
 				}
 		}
 		public static void doCave()
 		{
-			ImageIcon icon2 =  new ImageIcon("mm.jpg");
-			JOptionPane.showMessageDialog(
-					frame, 
-					"", 
-					"Stranded in a Field", 
-					JOptionPane.INFORMATION_MESSAGE, icon2); 
+			int choice;
+			Object[] options = {"Go Inside", "Leave"};
+			ImageIcon icon =  new ImageIcon("6666.jpg");
+			choice = JOptionPane.showOptionDialog(null, 
+				"A Dark Cave",
+				"Choose Your Action",
+				JOptionPane.YES_NO_CANCEL_OPTION,
+				JOptionPane.QUESTION_MESSAGE, 
+				icon,
+				options, 
+				options[1]);
+				switch(choice)
+				{
+					case 0:
+							{
+								gameContinue=true;
+								
+								break;
+							}
+					case 1:
+							{
+								JOptionPane.showMessageDialog(frame, "You Got Away Safely");
+								break;
+							}
+				}
 		}
 		public static void doVillage()
 		{
-			ImageIcon icon2 =  new ImageIcon("mm.jpg");
-			JOptionPane.showMessageDialog(
-					frame, 
-					"", 
-					"Stranded in a Field", 
-					JOptionPane.INFORMATION_MESSAGE, icon2); 
+			int choice;
+			Object[] options = {"Enter the Village", "Leave"};
+			ImageIcon icon =  new ImageIcon("55555.jpg");
+			choice = JOptionPane.showOptionDialog(null, 
+				"This Village Seems Quiet",
+				"Choose Your Action",
+				JOptionPane.YES_NO_CANCEL_OPTION,
+				JOptionPane.QUESTION_MESSAGE, 
+				icon,
+				options, 
+				options[1]);
+				switch(choice)
+				{
+					case 0:
+							{
+								gameContinue=true;
+								ImageIcon icon3 =  new ImageIcon("gtg.jpg");
+								JOptionPane.showMessageDialog(
+										frame, 
+										"You Died from a Lack of Hydration",
+										"Stranded in a Field", 
+										JOptionPane.INFORMATION_MESSAGE, icon3); 	
+								break;
+							}
+					case 1:
+							{
+								JOptionPane.showMessageDialog(frame, "You Got Away Safely");
+								break;
+							}
+				}
 		}
 		public static void printStats()
 		{
